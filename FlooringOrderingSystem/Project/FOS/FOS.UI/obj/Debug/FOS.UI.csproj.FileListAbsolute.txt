@@ -1,0 +1,13 @@
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\bin\Debug\FOS.UI.exe.config
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\bin\Debug\FOS.UI.exe
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\bin\Debug\FOS.UI.pdb
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\obj\Debug\FOS.UI.csprojResolveAssemblyReference.cache
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\obj\Debug\FOS.UI.csproj.CoreCompileInputs.cache
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\obj\Debug\FOS.UI.exe
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\obj\Debug\FOS.UI.pdb
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\bin\Debug\FOS.BLL.dll
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\bin\Debug\FOS.MODELS.dll
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\bin\Debug\FOS.DATA.dll
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\bin\Debug\FOS.BLL.pdb
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\bin\Debug\FOS.MODELS.pdb
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.UI\bin\Debug\FOS.DATA.pdb

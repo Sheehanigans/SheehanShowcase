@@ -1,0 +1,135 @@
+body{
+    background-color:#23211F;
+}
+
+#copywrite{
+    text-align: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#messagesBorderDiv{
+    border: 0.5px solid black; 
+    height: 50px;
+}
+
+#changeBorderDiv{
+    border: 0.5px solid black; 
+    height: 50px;
+}
+
+#moneyInBoarderDiv{
+    border: 0.5px solid black; 
+    height: 50px;
+}
+
+#itemBoarderDiv{
+    border: 0.5px solid black; 
+    height: 40px;
+}
+
+#moneyInBoarderDiv{
+    background-color: black;
+}
+
+#messagesBorderDiv{
+    background-color: black;
+}
+
+#changeBorderDiv{
+    background-color: black;
+}
+
+#itemBoarderDiv{
+    background-color: black;
+}
+
+.form-group{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    color: #F7F9F4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2{
+    text-align: center;
+    color: #F7F9F4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h4{
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#itemName{
+    font-weight: bolder;
+}
+
+#itemLabel{
+    color: #F7F9F4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn{
+    background-color: black;
+    color:  #F7F9F4;
+}
+
+.goodieButtons{
+    margin: 20px;
+    box-shadow: 0 4px black;
+    color: #F7F9F4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 20px;
+}
+
+.goodieButtons:hover{
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+    color: white;
+    border-color: red;
+}
+
+#itemId{
+    text-align: left;
+}
+
+#goodieButtonId1{
+    background-image: linear-gradient(#CB2A26, #81442F, #293B88);
+}
+
+#goodieButtonId2{
+    background-image: linear-gradient(yellow, #388B3B, red);
+}
+
+#goodieButtonId3{
+    background-image: linear-gradient(#784929, #386FD0);
+}
+
+#goodieButtonId4{
+    background-image: linear-gradient(#784929, #3D763B);
+}
+
+#goodieButtonId5{
+    background-image: linear-gradient(#3F50A5, #F75E31, #C4964F);
+}
+
+#goodieButtonId6{
+    background-image: linear-gradient(#EB4D1D, #D7D532, #6D372D);
+}
+
+#goodieButtonId7{
+    background-image: linear-gradient(#FAC32E, #B00918);
+}
+
+#goodieButtonId8{
+    background-image: linear-gradient(#FCEF4A,#DE2128);
+}
+
+#goodieButtonId9{
+    background-image: linear-gradient(#DE202D,#FCEF4A);
+}

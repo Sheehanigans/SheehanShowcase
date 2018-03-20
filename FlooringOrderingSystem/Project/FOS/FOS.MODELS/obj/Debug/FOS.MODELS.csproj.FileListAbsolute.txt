@@ -1,0 +1,6 @@
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.MODELS\bin\Debug\FOS.MODELS.dll
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.MODELS\bin\Debug\FOS.MODELS.pdb
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.MODELS\obj\Debug\FOS.MODELS.csproj.CoreCompileInputs.cache
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.MODELS\obj\Debug\FOS.MODELS.dll
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.MODELS\obj\Debug\FOS.MODELS.pdb
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.MODELS\obj\Debug\FOS.MODELS.csprojResolveAssemblyReference.cache

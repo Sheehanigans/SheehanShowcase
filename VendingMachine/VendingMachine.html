@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vending Machine</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/VendingMachine.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Vending Machine</h1>
+        <p id="copywrite">©1999</p>
+        <hr/>
+        <ul class="list-group" id="errorMessages"></ul>
+        <!-- error messages dynamically added here-->
+
+        <div class="row">
+            <!-- vending selection -->
+            <div class="col-md-9">
+                <div class="row">
+                    <div id="goodieSelection"></div>
+                </div>
+            </div>
+            <!-- vending controls -->
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Total $ In -->
+                    <form class="form-horizontal" role="form" id="totalMoneyInForm">
+                        <div class="form-group" id="moneyInParentDiv">
+                            <!-- Money In Display -->
+                            <form class="form-horizontal" role="form" id="moneyInDisplayForm">
+                            <h2 class="col-md-12">Total $ In</h2>
+                                <div class="col-md-12" id="moneyInBoarderDiv">
+                                    <div id="moneyDisplay"></div>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <button type="button"
+                                onclick="addMoney(1)"
+                                id="addDollar"
+                                class="btn btn-default">
+                            Add Dollar
+                            </button>
+                            </div>
+                            <div class="col-md-6">
+                                    <button type="button"
+                                    onclick="addMoney(2)"
+                                    id="addQuarter"
+                                    class="btn btn-default">
+                                Add Quarter
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <button type="button"
+                                onclick="addMoney(3)"
+                                id="addDime"
+                                class="btn btn-default">
+                            Add Dime
+                            </button>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="button"
+                                onclick="addMoney(4)"
+                                id="addNickle"
+                                class="btn btn-default">
+                            Add Nickle
+                            </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <hr/>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Messages -->
+                    <form class="form-horizontal" role="form" id="messagesForm">
+                        <div class="form-group">
+                            <h2 class="col-md-12">Messages</h2>
+                            <div class="col-md-12" id="messagesBorderDiv">
+                                <div id="messageDisplay"></div>
+                            </div>
+                        </div>
+                        <!-- item input -->
+                        <div class="form-group">
+                        <h4 class="col-md-6" id="itemLabel">Item: </h4>
+                            <div class="col-md-6" id="itemBoarderDiv">
+                                <div id="itemDisplay"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button"
+                            id="makePurchase"
+                            class="btn btn-default">
+                            Make Purchase
+                            </button>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <hr/>
+                            </div>
+                        </div>
+                    </form>
+                    <form class="form-horizontal" role="form" id="changeForm">
+                        <div class="form-group">
+                            <h2 class="col-md-12">Change</h2>
+                            <div class="col-md-12" id="changeBorderDiv">
+                                <div id="displayChange"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button"
+                            id="returnChange"
+                            class="btn btn-default">
+                            Return Change
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/vendingMachine.js"></script>
+</body>
+</html>

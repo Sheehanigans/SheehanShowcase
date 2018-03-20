@@ -1,0 +1,10 @@
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.BLL\bin\Debug\FOS.BLL.dll
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.BLL\bin\Debug\FOS.BLL.pdb
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.BLL\bin\Debug\FOS.DATA.dll
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.BLL\bin\Debug\FOS.MODELS.dll
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.BLL\bin\Debug\FOS.DATA.pdb
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.BLL\bin\Debug\FOS.MODELS.pdb
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.BLL\obj\Debug\FOS.BLL.csprojResolveAssemblyReference.cache
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.BLL\obj\Debug\FOS.BLL.csproj.CoreCompileInputs.cache
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.BLL\obj\Debug\FOS.BLL.dll
+C:\Repos\ryan-sheehan-individual-work\FlooringOrderingSystem\Project\FOS\FOS.BLL\obj\Debug\FOS.BLL.pdb
