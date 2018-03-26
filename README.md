@@ -18,8 +18,8 @@ Programmed a vending machine application with Javascript and jQuery that uses Aj
 Created a database for a DVD library and generated a Web API service that fetched the data using ADO .Net and Entity Framework. The service then communicates to a front-end written in Javascript, HTML, and CSS. 
 
 ### Upcoming Projects:
-Car Dealership: Full-stack web application that keeps track of inventory and sales for a car dealership with multiple user privileges. Will be building all of the views, the service layer, and the database from scratch. The project utilizes: Microsoft Identity, Dapper, ADO, Entity Framework, HTML, CSS, C#, Dependency Injection, a fully functioning database, and basically everything else I know!
+Car Dealership (done by April 6th, 2018): Full-stack web application that keeps track of inventory and sales for a car dealership with multiple user privileges. Will be building all of the views, the service layer, and the database from scratch. The project utilizes: Microsoft Identity, Dapper, ADO, Entity Framework, HTML, CSS, C#, Dependency Injection, a fully functioning database, and basically everything else I know!
 
-Blog: Full-stack web application that serves as a blog to rate movie trailers. 
+Blog (done by April 6th, 2018): Full-stack web application that serves as a blog to rate movie trailers. 
 
 Thanks for stopping by!
