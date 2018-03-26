@@ -14,9 +14,12 @@ Finished a partially completed university student tracking system that uses ASP.
 ## VendingMachine
 Programmed a vending machine application with Javascript and jQuery that uses Ajax to send data to a REST Web API service that preserves the application’s state
 
-### Upcoming Projects:
-DVD Library: Designed the schema for a DVD library database and leveraged Entity Framework and ADO to map a Web API service to a fully-functioning user interface ‒ creating a full-stack application
+## DVDLibrary
+Created a database for a DVD library and generated a Web API service that fetched the data using ADO .Net and Entity Framework. The service then communicates to a front-end written in Javascript, HTML, and CSS. 
 
-Car Dealership: Full-stack web application that keeps track of inventory and sales for a car dealeship with multiple user priveledges. Will be building all of the views, the service layer, and the database from scratch.
+### Upcoming Projects:
+Car Dealership: Full-stack web application that keeps track of inventory and sales for a car dealership with multiple user privileges. Will be building all of the views, the service layer, and the database from scratch. The project utilizes: Microsoft Identity, Dapper, ADO, Entity Framework, HTML, CSS, C#, Dependency Injection, a fully functioning database, and basically everything else I know!
+
+Blog: Full-stack web application that serves as a blog to rate movie trailers. 
 
 Thanks for stopping by!
