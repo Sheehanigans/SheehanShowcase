@@ -2,6 +2,9 @@
 I have included the projects I am most proud of in this repository. 
 Here's an overview of each project: 
 
+## CarDealership
+Full-stack application where with multiple user role privileges, a fully functioning database, robust logic layer, and front-end organized with MVC. The app utilized: SQL Server and SQL Management Studio, Dapper, ADO, Entity Framework, C#/.NET, Ajax, HTML, CSS, Bootstrap, and most other technologies I know. 
+
 ## FlooringOrdingSystem
 Used C# and .NET framework to program an application that tracks inventory for a flooring company. The application is assisted by interfaces and dependency injection to create, read, add, and delete files.
 
@@ -16,10 +19,5 @@ Programmed a vending machine application with Javascript and jQuery that uses Aj
 
 ## DVDLibrary
 Created a database for a DVD library and generated a Web API service that fetched the data using ADO .Net and Entity Framework. The service then communicates to a front-end written in Javascript, HTML, and CSS. 
-
-### Upcoming Projects:
-Car Dealership (done by April 6th, 2018): Full-stack web application that keeps track of inventory and sales for a car dealership with multiple user privileges. Will be building all of the views, the service layer, and the database from scratch. The project utilizes: Microsoft Identity, Dapper, ADO, Entity Framework, HTML, CSS, C#, Dependency Injection, a fully functioning database, and basically everything else I know!
-
-Blog (done by April 6th, 2018): Full-stack web application that serves as a blog to rate movie trailers. 
 
 Thanks for stopping by!
