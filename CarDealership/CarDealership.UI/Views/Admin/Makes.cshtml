@@ -1,0 +1,44 @@
+﻿@model CarDealership.UI.Models.MakesVM
+
+@{
+    ViewBag.Title = "Makes";
+}
+<h2>Makes</h2>
+<div class="row">
+    @using (Html.BeginForm("Makes", "Admin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.HiddenFor(m => m.NewMake.MakeId)
+            @Html.LabelFor(m => m.NewMake.MakeName, new { @class = "col-md-2 control-label" })
+            <div class="col-md-8">
+                @Html.TextBoxFor(m => m.NewMake.MakeName, new { @class = "form-control" })
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-primary" value="Save" />
+            </div>
+        </div>
+    }
+</div>
+<div class="row">
+    <table class="table-responsive table">
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Date Added</th>
+                <th>User</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model.Makes)
+            {
+                <tr>
+                    <td>@car.MakeName</td>
+                    <td>@car.DateAdded</td>
+                    <td>@car.UserName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

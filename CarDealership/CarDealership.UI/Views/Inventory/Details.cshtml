@@ -1,0 +1,49 @@
+﻿@model CarDealership.UI.Models.ListingVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Vehicle Details</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 detailsPageBoarder">
+            <div class="row">
+                <div class="col-sm-3">
+                    <p><strong>@Model.Listing.ModelYear @Model.Listing.MakeName @Model.Listing.ModelName</strong></p>  <br />
+                    @{ var imagePath = Url.Content("~/Images/");
+                    }
+                    <p class="recentListing"><img src="@(imagePath + Model.Listing.ImageFileUrl)" width="150" /></p>
+                </div>
+                <div class="col-sm-3">
+                    <p> <strong>Body Style: </strong>@Model.Listing.BodyStyleName</p>
+                    <p> <strong>Trans: </strong>@Model.Listing.Transmission</p>
+                    <p> <strong>Color: </strong>@Model.Listing.ExteriorColorName</p>
+                </div>
+                <div class="col-sm-3">
+                    <p> <strong>Interior: </strong>@Model.Listing.InteriorColorName</p>
+                    <p> <strong>Mileage: </strong>@Model.Listing.Mileage</p>
+                    <p> <strong>VIN: </strong>@Model.Listing.VIN</p>
+                </div>
+                <div class="col-sm-3">
+                    <p> <strong>SalePrice: </strong>$@Model.Listing.SalePrice</p>
+                    <p> <strong>MSRP: </strong>$@Model.Listing.MSRP</p>
+                </div>
+                <div class="col-sm-offset-3 col-sm-9">
+                    <p><strong>Description: </strong>@Model.Listing.VehicleDescription</p>
+                </div>
+                <div class="col-sm-offset-9 col-sm-3">
+                    @Html.ActionLink("Contact Us", "Contact", "Home", new { vin = Model.Listing.VIN }, new { @class = "btn btn-default" })
+                </div>
+            </div>
+        </div>
+        @if (Model.Listing.IsSold)
+        {
+            <div class="col-sm-3">
+                <h2 style="color: red">SOLD!</h2>
+            </div>
+        }
+    </div>
+</div>
+
+

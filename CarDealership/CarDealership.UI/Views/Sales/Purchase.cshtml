@@ -1,0 +1,115 @@
+﻿@model CarDealership.UI.Models.PurchaseListingVM
+
+@{
+    ViewBag.Title = "Purchase";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 detailsPageBoarder">
+            <h2>Purchase</h2>
+            <div class="row">
+                <div class="col-sm-3">
+                    <p><strong>@Model.ListingToPurchase.ModelYear @Model.ListingToPurchase.MakeName @Model.ListingToPurchase.ModelName</strong></p>  <br />
+                    @{ var imagePath = Url.Content("~/Images/");
+                    }
+                    <p class="recentListing"><img src="@(imagePath + Model.ListingToPurchase.ImageFileUrl)" width="150" /></p>
+                </div>
+                <div class="col-sm-3">
+                    <p> <strong>Body Style: </strong>@Model.ListingToPurchase.BodyStyleName</p>
+                    <p> <strong>Trans: </strong>@Model.ListingToPurchase.Transmission</p>
+                    <p> <strong>Color: </strong>@Model.ListingToPurchase.ExteriorColorName</p>
+                </div>
+                <div class="col-sm-3">
+                    <p> <strong>Interior: </strong>@Model.ListingToPurchase.InteriorColorName</p>
+                    <p> <strong>Mileage: </strong>@Model.ListingToPurchase.Mileage</p>
+                    <p> <strong>VIN: </strong>@Model.ListingToPurchase.VIN</p>
+                </div>
+                <div class="col-sm-3">
+                    <p> <strong>SalePrice: </strong>$@Model.ListingToPurchase.SalePrice</p>
+                    <p> <strong>MSRP: </strong>$@Model.ListingToPurchase.MSRP</p>
+                </div>
+                <div class="col-sm-offset-3 col-sm-9">
+                    <p><strong>Description: </strong>@Model.ListingToPurchase.VehicleDescription</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>Sales Information</h2>
+    <div class="row">
+        @using (Html.BeginForm("Purchase", "Sales", FormMethod.Post, new { role = "form" }))
+        {
+            @Html.ValidationSummary("", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.HiddenFor(m => m.ListingToPurchase.ListingId)
+                @Html.LabelFor(m => m.PurchaseForm.CustomerName, new { @class = "col-md-2 control-label"})
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.PurchaseForm.CustomerName, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PurchaseForm.Phone, new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.PurchaseForm.Phone, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PurchaseForm.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.PurchaseForm.Email, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PurchaseForm.Street1, new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.PurchaseForm.Street1, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PurchaseForm.Street2, new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.PurchaseForm.Street2, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PurchaseForm.City, new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.PurchaseForm.City, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">State</label>
+                <div class="col-md-4">
+                    @Html.DropDownListFor(m => m.PurchaseForm.StateId, Model.States, "-Choose a Make-", new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.PurchaseForm.Zipcode, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.PurchaseForm.Zipcode, new { @class = "form-control" })
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(m => m.PurchaseForm.PurchasePrice, new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.PurchaseForm.PurchasePrice, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Purchase Type</label>
+                <div class="col-md-4">
+                    @Html.EnumDropDownListFor(
+                           m => m.PurchaseForm.PaymentOption,
+                           "Select Payment Option",
+                           new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-2">
+                    <input type="submit" class="btn btn-danger" value="Purchase" />
+                </div>
+            </div>
+        }
+    </div>
+</div>

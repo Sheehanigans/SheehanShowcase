@@ -1,0 +1,55 @@
+﻿@model CarDealership.UI.Models.ModelsVM
+
+@{
+    ViewBag.Title = "Models";
+}
+
+<h2>Models</h2>
+
+<div class="row">
+    @using (Html.BeginForm("Models", "Admin", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @{
+                    Model.NewModel = new CarDealership.Models.Tables.Model { Make = new CarDealership.Models.Tables.Make { MakeName = "placeholder" } };
+                }
+                @Html.HiddenFor(m => m.NewModel.Make.MakeName)
+            @Html.HiddenFor(m => m.NewModel.ModelId)
+            @Html.LabelFor(m => m.NewModel.ModelName, "Model Name", new { @class = "col-md-2 control-label" })
+            <div class="col-md-3">
+                @Html.TextBoxFor(m => m.NewModel.ModelName, new { @class = "form-control" })
+            </div>
+            <label class="col-md-2 control-label">Make</label>
+            <div class="col-md-3">
+                @Html.DropDownListFor(m => m.NewModel.Make.MakeId, Model.Makes, "-Choose a Make-", new { @class = "form-control" } )
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-primary" value="Save" />
+            </div>
+        </div>
+    }
+</div>
+<div class="row">
+    <table class="table-responsive table">
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Date Added</th>
+                <th>User</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var car in Model.Models)
+            {
+                <tr>
+                    <td>@car.Make.MakeName</td>
+                    <td>@car.ModelName</td>
+                    <td>@car.DateAdded</td>
+                    <td>@car.UserName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

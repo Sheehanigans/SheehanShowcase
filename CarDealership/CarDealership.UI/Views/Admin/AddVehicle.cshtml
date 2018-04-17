@@ -1,0 +1,155 @@
+﻿@model CarDealership.UI.Models.AddListingVM
+
+@{
+    ViewBag.Title = "AddVehicle";
+}
+
+<h2>AddVehicle</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("AddVehicle", "Admin", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data", role = "form" }))
+            {
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        <label class="control-label">Make</label>
+                        @Html.DropDownListFor(m => m.Listing.MakeId, Model.Makes, "-Choose-", new { @class = "form-control", @id = "makes" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.MakeId)</span>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Model</label>
+                        @Html.DropDownListFor(m => m.Listing.ModelId, Model.Models, "-Choose-", new { @class = "form-control", @id = "models" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.ModelId)</span>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Type</label>
+                        @Html.EnumDropDownListFor(
+                            m => m.Listing.Condition,
+                            "-Choose-",
+                            new { @class = "form-control" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.Condition)</span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        <label class="control-label">Body Style</label>
+                        @Html.DropDownListFor(m => m.Listing.BodyStyleId, Model.BodyStyles, "-Choose-", new { @class = "form-control" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.BodyStyleId)</span>
+                    </div>
+                    <div class="col-md-4">
+                        @Html.LabelFor(m => m.Listing.ModelYear, "Year", new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Listing.ModelYear, new { @class = "form-control", type = "number" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.ModelYear)</span>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Transmission</label>
+                        @Html.EnumDropDownListFor(
+                        m => m.Listing.Transmission,
+                        "-Choose-",
+                        new { @class = "form-control" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.Transmission)</span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        <label class="control-label">Interior Color</label>
+                        @Html.DropDownListFor(m => m.Listing.InteriorColorId, Model.InteriorColors, "-Choose-", new { @class = "form-control" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.InteriorColorId)</span>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="control-label">Exterior Color</label>
+                        @Html.DropDownListFor(m => m.Listing.ExteriorColorId, Model.ExteriorColors, "-Choose-", new { @class = "form-control" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.ExteriorColorId)</span>
+                    </div>                    
+                    <div class="col-md-4">
+                        @Html.LabelFor(m => m.Listing.Mileage, "Mileage", new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Listing.Mileage, new { @class = "form-control", type = "number" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.Mileage)</span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-4">
+                        @Html.LabelFor(m => m.Listing.VIN, "VIN #", new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Listing.VIN, new { @class = "form-control" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.VIN)</span>
+
+                    </div>
+                    <div class="col-md-4">
+                        @Html.LabelFor(m => m.Listing.MSRP, "MSRP", new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Listing.MSRP, new { @class = "form-control", type = "number" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.MSRP)</span>
+                    </div>                    
+                    <div class="col-md-4">
+                        @Html.LabelFor(m => m.Listing.SalePrice, "Sale Price", new { @class = "control-label" })
+                        @Html.TextBoxFor(m => m.Listing.SalePrice, new { @class = "form-control", type = "number" })
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.SalePrice)</span>
+                    </div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        @Html.LabelFor(m => m.Listing.VehicleDescription, "Descripton", new { @class = "control-label" })
+                        @Html.TextAreaFor(m => m.Listing.VehicleDescription, new { @class = "form-control", @rows = "6"})
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Listing.VehicleDescription)</span>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        @Html.LabelFor(m => m.Listing.ImageFileUrl, "Image", new { @class = "control-label" })
+                        <input id="ImageUpload" name="ImageUpload" type="file" class="form-control" />
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.ImageUpload)</span>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-primary" value="Save" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#makes").change(function (e) {
+                var makeVal = $(this).find(':selected').val();
+                var makeText = $(this).find(':selected').text();
+                if (makeVal > 0) {
+                    getModels();
+                }
+                return false;
+            });
+
+        });
+        function getModels() {
+            var makeVal = $("#makes").find(':selected').val();
+            var makeText = $("#makes").find(':selected').text();
+            var params = '&makeid=' + makeVal
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:57967/api/get/models?' + params,
+                success: function (data) {
+                    $('#models').empty();
+                    $.each(data, function (index, models) {
+                        var modelList = "<option value=" + models.ModelId + ">" + models.ModelName + "</option>";
+                        $(modelList).appendTo("#models")
+                    })
+                },
+                error: function () {
+                    alert('Error finding models for make ' + makeText)
+                }
+            })
+        }
+    </script>
+}
+

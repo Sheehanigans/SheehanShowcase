@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "InventoryReport";
+}
+
+<h2>InventoryReport</h2>
+
+<h3>New Vehicles</h3>
+<div class="col-md-12" id="newVehicles">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Count</th>
+                <th>Stock Value</th>
+            </tr>
+        </thead>
+        <tbody id="newTable"></tbody>
+    </table>
+</div>
+
+<h3>Used Vehicles</h3>
+<div class="col-md-12" id="usedVehicles">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Count</th>
+                <th>Stock Value</th>
+            </tr>
+        </thead>
+        <tbody id="usedTable"></tbody>
+    </table>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            loadNewVehicleReport()
+            loadUsedVehicleReport()
+        })
+
+        function loadNewVehicleReport() {
+
+            var params = "report=New"
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:57967/api/get/inventoryReport?' + params,
+                success: function (data) {
+                    $.each(data, function (index, reportItems) {
+                        var html = '<tr>'
+                        html += '<th>' + reportItems.ModelYear + '</th>'
+                        html += '<th>' + reportItems.MakeName + '</th>'
+                        html += '<th>' + reportItems.ModelName + '</th>'
+                        html += '<th>' + reportItems.Count + '</th>'
+                        html += '<th>' + reportItems.StockValue + '</th>'
+                        html += '</tr>'
+
+                        $('#newTable').append(html.toString());
+                    })
+                },
+                error: function () {
+                    alert('Error gathering inventory data, try again later')
+                }
+            })
+        }
+
+        function loadUsedVehicleReport() {
+
+            var params = "report=Used"
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:57967/api/get/inventoryReport?' + params,
+                success: function (data) {
+                    $.each(data, function (index, reportItems) {
+                        var html = '<tr>'
+                        html += '<th>' + reportItems.ModelYear + '</th>'
+                        html += '<th>' + reportItems.MakeName + '</th>'
+                        html += '<th>' + reportItems.ModelName + '</th>'
+                        html += '<th>' + reportItems.Count + '</th>'
+                        html += '<th>' + reportItems.StockValue + '</th>'
+                        html += '</tr>'
+
+                        $('#usedTable').append(html.toString());
+                    })
+                },
+                error: function () {
+                    alert('Error gathering inventory data, try again later')
+                }
+            })
+
+        }
+
+    </script>
+
+}

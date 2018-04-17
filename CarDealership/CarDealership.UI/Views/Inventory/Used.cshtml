@@ -1,0 +1,107 @@
+﻿@model CarDealership.UI.Models.ListingListVM
+
+@{
+    ViewBag.Title = "Used";
+}
+
+<div class="row">
+    <h3>Used Vehicles</h3>
+    <div class="col-xs-12">
+        <h3>Quick Search</h3>
+        <form id="searchForm" class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="quickSearch" placeholder="Enter make, model, or year" />
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="minPrice" placeholder="Min Price" />
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="maxPrice" placeholder="Max Price" />
+            </div>
+            <div class="form-group">
+                <label for="price">Year</label>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="minYear" placeholder="Min Year" />
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="maxYear" placeholder="Max Year" />
+            </div>
+            <div class="form-group">
+                <button id="btnSearch" class="btn btn-default">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="container" id="searchResults">
+</div>
+
+@section Scripts
+{
+
+    <script>
+        $(document).ready(function () {
+            $("#searchForm").submit(function (e) {
+                search();
+                return false;
+            });
+        });
+
+        function search() {
+
+            var params;
+            var imagePath = '@Url.Content("~/Images/")';
+            var detailsPath = '@Url.Action("Details", "Inventory")/'
+
+            params = '?view=Used' + '&quickSearch=' + $('#quickSearch').val() + '&minPrice=' + $('#minPrice').val() + '&maxPrice=' +
+                $('maxPrice').val() + '&minYear=' + $('minYear').val() + '&maxYear=' + $('maxYear').val()
+
+            $.ajax({
+
+                type: 'GET',
+                url: 'http://localhost:57967/api/listings/search' + params,
+                success: function (data) {
+                    $('#searchResults').empty();
+
+                    $.each(data, function (index, listing) {
+                        var html = '<div class="row listingSearchBoarder">'
+                        html += '<div class="col-xs-12">'
+                        html += '<div class="row">'
+                        html += '<div class="col-xs-3">'
+                        html += '<p class="recentListing"><strong>' + listing.ModelYear + ' ' + listing.MakeName + ' ' + listing.ModelName + '</strong></p>' + '<br/>'
+                        html += '<p class="recentListing" ><img src="' + imagePath + listing.ImageFileUrl + '" width="150"/></p >'
+                        html += '</div>'
+                        html += '<div class="col-xs-3">'
+                        html += '<p class="recentListing"> <strong>Body Style: </strong>' + listing.BodyStyleName + '</p>'
+                        html += '<p class="recentListing"> <strong>Trans: </strong>' + listing.Transmission + '</p>'
+                        html += '<p class="recentListing"> <strong>Color: </strong>' + listing.ExteriorColorName + '</p>'
+                        html += '</div>'
+                        html += '<div class="col-xs-3">'
+                        html += '<p class="recentListing"> <strong>Interior: </strong>' + listing.InteriorColorName + '</p>'
+                        html += '<p class="recentListing"> <strong>Mileage: </strong>' + listing.Mileage + '</p>'
+                        html += '<p class="recentListing"> <strong>VIN: </strong>' + listing.VIN + '</p>'
+                        html += '</div>'
+                        html += '<div class="col-xs-3">'
+                        html += '<p class="recentListing"> <strong>SalePrice: </strong>$' + listing.SalePrice + '</p>'
+                        html += '<p class="recentListing"> <strong>MSRP: </strong>$' + listing.MSRP + '</p>'
+                        html += '<a href="' + detailsPath + listing.ListingId + '" class="btn btn-default">Details</a>'
+                        html += '</div>'
+                        html += '</div>'
+                        html += '</div>'
+
+                        $('#searchResults').append(html.toString());
+                    })
+                },
+                error: function () {
+                    alert('Error performing search, try again later')
+                }
+            })
+        }
+
+    </script>
+
+}
+
